@@ -84,26 +84,6 @@ public class JogoVelha {
         return matriz;
     }
 
-    public static void realizaJogada(char [][]matriz, String jogador, char carac){
-        Scanner scan = new Scanner(System.in);
-
-        int posicao;
-        int[] jogada = new int[2];
-        System.out.printf("%s, digite a linha da sua jogada ", jogador);
-        posicao = scan.nextInt();
-        jogada[0] = posicao;
-        System.out.printf("%s, digite a coluna da sua jogada ", jogador);
-        posicao = scan.nextInt();
-        jogada[1] = posicao;
-        
-
-        matriz = atualizaMatriz(matriz, jogada, carac);
-        printMatriz(matriz);
-        
-        
-    }
-
-
     public static void main(String[] args) {
         char [][]matriz = { {'_','_','_'}, {'_','_','_'}, {'_','_','_'}};
 
@@ -112,49 +92,36 @@ public class JogoVelha {
         int posicao2;
 
         while(isGameOver(matriz) == false || isWinner(matriz) == false){
-            // int[] jogada1 = new int[2];
-            // System.out.println("Jogador 1, digite a linha da sua jogada ");
-            // posicao1 = scan.nextInt();
-            // jogada1[0] = posicao1;
-            // System.out.println("Jogador 1, digite a coluna da sua jogada ");
-            // posicao1 = scan.nextInt();
-            // jogada1[1] = posicao1;
-            realizaJogada(matriz, "Jogador 1", 'X');
+            int[] jogada1 = new int[2];
+            System.out.println("Jogador 1, digite a linha da sua jogada ");
+            posicao1 = scan.nextInt();
+            jogada1[0] = posicao1;
+            System.out.println("Jogador 1, digite a coluna da sua jogada ");
+            posicao1 = scan.nextInt();
+            jogada1[1] = posicao1;
+            matriz = atualizaMatriz(matriz, jogada1, 'X');
+            printMatriz(matriz);
             if(isWinner(matriz)) {
                 System.out.println("Jogador 1 eh o vencedor");
-                return;
+                break;
             }
             if(isGameOver(matriz)) break;
 
-            realizaJogada(matriz, "Jogador 2", 'O');
+            int[] jogada2 = new int[2];
+            System.out.println("Jogador 2, digite a linha da sua jogada ");
+            posicao2 = scan.nextInt();
+            jogada2[0] = posicao2;
+            System.out.println("Jogador 2, digite a coluna da sua jogada ");
+            posicao2 = scan.nextInt();
+            jogada2[1] = posicao2;
+
+            matriz = atualizaMatriz(matriz, jogada2, 'O');
+            printMatriz(matriz);
             if(isWinner(matriz)) {
                 System.out.println("Jogador 2 eh o vencedor");
-                return;
+                break;
             }
             if(isGameOver(matriz)) break;
-            // matriz = atualizaMatriz(matriz, jogada1, 'X');
-            // printMatriz(matriz);
-            // if(isWinner(matriz)) {
-            //     System.out.println("Jogador 1 eh o vencedor");
-            //     break;
-            // }
-            // if(isGameOver(matriz)) break;
-
-            // int[] jogada2 = new int[2];
-            // System.out.println("Jogador 2, digite a linha da sua jogada ");
-            // posicao2 = scan.nextInt();
-            // jogada2[0] = posicao2;
-            // System.out.println("Jogador 2, digite a coluna da sua jogada ");
-            // posicao2 = scan.nextInt();
-            // jogada2[1] = posicao2;
-
-            // matriz = atualizaMatriz(matriz, jogada2, 'O');
-            // printMatriz(matriz);
-            // if(isWinner(matriz)) {
-            //     System.out.println("Jogador 2 eh o vencedor");
-            //     break;
-            // }
-            // if(isGameOver(matriz)) break;
         }
         System.out.println("Jogo acabou sem vencedores");
 

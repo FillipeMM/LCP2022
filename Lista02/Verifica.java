@@ -16,7 +16,7 @@ public class Verifica {
         Scanner scan = new Scanner(System.in);
         String rg = scan.nextLine();
         scan.close();
-        String regex_rg = "[0-9]{1,2}\\.[0-9]{3}\\.[0-9]{3}-x|[0-9]";
+        String regex_rg = "[0-9]{1,2}\\.[0-9]{3}\\.[0-9]{3}-[x|[0-9]]";
         if(rg.matches(regex_rg)){
             System.out.println("RG eh valido");
             return;

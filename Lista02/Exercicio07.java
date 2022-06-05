@@ -30,8 +30,8 @@ public class Exercicio07 {
     public static void main(String[] args) {
         // Aluno aluno = new Aluno(ra, nome, curso, idade);
         List<Aluno> lista = new ArrayList<Aluno>();
-        Aluno aluno1 = new Aluno("123", "Fillipe", "Comp", 20);
-        Aluno aluno2 = new Aluno("111", "Bruno", "Comp", 20);
+        Aluno aluno1 = new Aluno("123", "Fillipe", "Comp", 23);
+        Aluno aluno2 = new Aluno("111", "Bruno", "Comp", 22);
         Aluno aluno3 = new Aluno("122", "Mike", "Comp", 20);
         
         lista.add(aluno1);
@@ -40,7 +40,7 @@ public class Exercicio07 {
 
         System.out.println("Lista Inicial");
         for(Aluno aluno: lista){
-            System.out.printf("Nome:%s\nCurso:%s\nRA:%s\nIdade%d\n", aluno.nome,aluno.curso,aluno.ra, aluno.idade);
+            System.out.printf("Nome:%s Curso:%s\nRA:%s Idade%d\n", aluno.nome,aluno.curso,aluno.ra, aluno.idade);
             System.out.println(); 
         }
         
@@ -50,7 +50,7 @@ public class Exercicio07 {
         };
         System.out.println("Lista Final");
         for(Aluno aluno: lista){
-            System.out.printf("Nome:%s\nCurso:%s\nRA:%s\nIdade:%d\n", aluno.nome,aluno.curso,aluno.ra, aluno.idade);
+            System.out.printf("Nome:%s Curso:%s\nRA:%s Idade:%d\n", aluno.nome,aluno.curso,aluno.ra, aluno.idade);
             System.out.println();
         }
 

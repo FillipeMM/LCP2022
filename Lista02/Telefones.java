@@ -25,7 +25,7 @@ public class Telefones {
         }
 
         if(telefone.matches(regex_tel)){
-            System.out.println("Numero eh de celular");
+            System.out.println("Numero eh de telefone");
             // return;
         }
         String vals[] = telefone.split("\\)");
